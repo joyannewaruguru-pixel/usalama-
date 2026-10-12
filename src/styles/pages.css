@@ -1,0 +1,61 @@
+.login-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: var(--s5) var(--s4); background: var(--bg); }
+.login-card { width: 100%; max-width: 440px; padding: var(--s6); }
+.login-card h1 { margin-top: var(--s5); font-size: 26px; }
+.login-card > .muted { margin: var(--s2) 0 var(--s4); }
+.login-row { display: flex; justify-content: space-between; align-items: center; gap: var(--s3); margin-bottom: var(--s5); flex-wrap: wrap; }
+
+.filter-bar { display: grid; grid-template-columns: minmax(220px, 2fr) repeat(4, minmax(130px, 1fr)) auto; gap: var(--s3); align-items: end; padding: var(--s4) var(--s5); }
+.filter-bar .field { margin-bottom: 0; }
+.clear-btn { align-self: end; }
+
+.toolbar { display: flex; justify-content: space-between; align-items: center; gap: var(--s3); flex-wrap: wrap; }
+.toolbar-actions { display: flex; gap: var(--s3); flex-wrap: wrap; }
+.toolbar-card { display: flex; align-items: flex-end; gap: var(--s5); flex-wrap: wrap; padding: var(--s4) var(--s5); }
+.inline-field { margin-bottom: 0; min-width: 220px; }
+
+.subhead { margin: var(--s2) 0; }
+.prose { max-width: 68ch; line-height: 1.65; }
+.meta-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s4); margin: var(--s5) 0 0; padding-top: var(--s5); border-top: 1px solid var(--border); }
+.meta-grid dt { font-size: 13px; color: var(--text-2); margin-bottom: 2px; }
+.meta-grid dd { margin: 0; font-weight: 500; display: flex; align-items: center; gap: 6px; }
+.meta-grid .span-2 { grid-column: span 2; }
+
+.evidence-grid { list-style: none; margin: var(--s4) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--s3); }
+.evidence-tile { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: var(--s3); border: 1px dashed #B8C4D2; border-radius: var(--r-input); background: var(--bg); }
+.evidence-thumb { width: 100%; height: 72px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #E3E9F2; color: var(--navy); margin-bottom: 4px; }
+.evidence-name { font-weight: 600; font-size: 14px; word-break: break-all; }
+
+.notes-card { border-left: 4px solid var(--warning); background: #FFFDFB; }
+.notes-list { list-style: none; margin: var(--s4) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--s3); }
+.notes-list li { padding: var(--s3); background: #fff; border: 1px solid var(--border); border-radius: var(--r-input); display: flex; flex-direction: column; gap: 4px; }
+
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s4); }
+.form-actions { display: flex; justify-content: flex-end; gap: var(--s3); margin-top: var(--s5); }
+
+.chart-box { width: 100%; height: 300px; min-width: 0; }
+
+@media (max-width: 1279px) {
+  .filter-bar { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .filter-bar .search-field { grid-column: span 3; }
+}
+
+@media (max-width: 767px) {
+  .filter-bar { grid-template-columns: minmax(0, 1fr); }
+  .filter-bar .search-field { grid-column: auto; }
+  .form-grid { grid-template-columns: minmax(0, 1fr); }
+  .form-actions { flex-direction: column-reverse; }
+  .form-actions .btn { width: 100%; }
+  .meta-grid { grid-template-columns: minmax(0, 1fr); }
+  .meta-grid .span-2 { grid-column: auto; }
+  .login-card { padding: var(--s5); }
+  .toolbar-actions, .toolbar-actions .btn { width: 100%; }
+  .chart-box { height: 260px; }
+  .card { padding: var(--s4); }
+
+  .responsive-table thead { position: absolute; left: -9999px; }
+  .responsive-table, .responsive-table tbody, .responsive-table tr, .responsive-table td { display: block; width: 100%; }
+  .responsive-table tr { border: 1px solid var(--border); border-radius: var(--r-input); margin-bottom: var(--s3); padding: var(--s2) var(--s3); }
+  .responsive-table td { display: flex; justify-content: space-between; align-items: center; gap: var(--s3); border-bottom: 0; padding: 6px 0; text-align: right; }
+  .responsive-table td::before { content: attr(data-label); color: var(--text-2); font-size: 13px; font-weight: 600; text-align: left; flex-shrink: 0; }
+  .responsive-table .desc-cell { min-width: 0; max-width: none; }
+}
